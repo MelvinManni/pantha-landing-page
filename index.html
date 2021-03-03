@@ -4,6 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #preloader {
+            position: fixed;
+            z-index: 2000000;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            background: #fff;
+            transition: 0.4s ease all;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        #preloader.off {
+            animation: 0.4s fade 1 forwards;
+            visibility: collapse;
+        }
+
+        #preloader div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #preloader img {
+            width: 140px;
+        }
+
+        #preloader img:nth-child(2) {
+            width: 70px;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            80% {
+                opacity: 0.2;
+            }
+
+            to {
+                opacity: 0;
+                display: none;
+                z-index: 0;
+            }
+        }
+    </style>
     <title>Pantha||Digitizing Informal Retail in Africa </title>
     <link rel="shortcut icon" href="assets/images/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="assets/grid.css">
@@ -11,7 +65,11 @@
 </head>
 
 <body>
-
+    <div id="preloader">
+        <div>
+            <img src="assets/images/logo.svg" alt=""> <img src="assets/icon/preloader.svg" alt="">
+        </div>
+    </div>
     <header>
         <nav class="nav row justify-content-between align-items-center">
             <div class="nav__logo">
@@ -296,7 +354,7 @@
                             Ikpa Rd, Uyo. Akwa Ibom, Nigeria.
                         </a>
                         <p class="label my-2 fw-4">
-                            Email: ​<a href="mailto:panthanation@gmail.com" class=" ">panthanation@gmail.com</a>
+                            Email: ​<a href="mailto:support@panthanation.com" class=" ">support@panthanation.com</a>
                         </p>
                         <p class="label fw-4">
                             Customer service: <a href="tel:+2348185218818">08185218818</a>

@@ -149,6 +149,29 @@ a:active {
   background: var(--white) !important;
 }
 
+/* alert */
+
+.alert {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  min-width: 170px;
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 6px 0 0 6px;
+  z-index: 5000;
+  transition: 0.34s ease all;
+  animation: 0.67s slideIn ease 1 forwards;
+}
+
+.alert.success {
+  background: var(--success);
+}
+
+.alert.error {
+  background: rgb(179, 11, 11);
+}
+
 /* forms */
 
 .form-group {
@@ -877,6 +900,15 @@ footer {
   }
 }
 
+@keyframes slideIn {
+  from {
+    right: -300%;
+  }
+
+  to {
+    right: 10px;
+  }
+}
 /*
 **
 RESPONSIVENESS 
