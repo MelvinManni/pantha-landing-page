@@ -23,7 +23,7 @@
 
 /* Global Styles and Initialization */
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -50,6 +50,27 @@ a:focus,
 a:active {
   text-decoration: none;
   color: inherit;
+}
+
+.hollow-circle {
+  width: 270px;
+  height: 270px;
+  background-color: var(--primary);
+  opacity: 0.3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.hollow-circle::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: var(--white);
 }
 
 /* Colors */
@@ -126,6 +147,37 @@ a:active {
 }
 .bg-white {
   background: var(--white) !important;
+}
+
+/* forms */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  background: #eff0f7;
+  border: 1px solid #d9dbe9;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 15px;
+  color: var(--gray);
+  font-size: 16px;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  transition: 0.4s ease all;
+  border-color: var(--secondary);
+  border-width: 2px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--gray100);
+  font-size: 14px;
 }
 
 /* Typography */
@@ -219,9 +271,9 @@ label {
 
 .btn {
   height: 55px;
-  min-width: 160px;
+  min-width: 170px;
   max-width: max-content;
-  padding: 10px 25px;
+  padding: 10px 35px;
   background: var(--primary);
   font-family: "Poppins";
   font-style: normal;
@@ -233,15 +285,17 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-box-shadow: 1px 1px 11px 0px rgba(50, 50, 50, 0.45);
-  -moz-box-shadow: 1px 1px 11px 0px rgba(50, 50, 50, 0.45);
-  box-shadow: 1px 1px 11px 0px rgba(50, 50, 50, 0.45);
+  -webkit-box-shadow: 1px 1px 11px 0px rgba(50, 50, 50, 0.25);
+  -moz-box-shadow: 1px 1px 11px 0px rgba(50, 50, 50, 0.25);
+  box-shadow: 1px 1px 11px 0px rgba(50, 50, 50, 0.25);
   border: 0;
   cursor: pointer;
 }
 
-.btn:active {
+.btn:active,
+.btn:focus {
   top: -200%;
+  color: var(--white);
   box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.2);
   animation: 0.7s pulse 1 forwards;
 }
@@ -784,6 +838,18 @@ label {
   right: 90px;
   top: 70px;
   mix-blend-mode: overlay;
+}
+
+/* contact */
+
+#contact .one-left {
+  bottom: 90px;
+  right: -200px;
+}
+
+#contact .one-bottom {
+  right: 90px;
+  bottom: -140px;
 }
 
 /* footer */
