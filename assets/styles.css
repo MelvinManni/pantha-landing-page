@@ -319,8 +319,26 @@ label {
   border-radius: 5px;
 }
 
+#menu {
+  height: 50px;
+  width: 50px;
+  padding: 9px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 1px 1px 8px 0px rgba(50, 50, 50, 0.25);
+  -moz-box-shadow: 1px 1px 8px 0px rgba(50, 50, 50, 0.25);
+  box-shadow: 1px 1px 8px 0px rgba(50, 50, 50, 0.25);
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  display: none;
+}
+
 .btn:active,
-.btn:focus {
+.btn:focus,
+#menu:active {
   top: -200%;
   color: var(--white);
   box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.2);
@@ -1114,8 +1132,59 @@ RESPONSIVENESS
   }
 }
 
+@media all and (max-width: 545px) {
+  #menu {
+    display: flex;
+  }
+
+  .nav__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* height: 0; */
+    overflow: hidden;
+    transition: 0.5s ease-in-out all;
+    animation: 0.4s slideUp ease 1 forwards;
+  }
+
+  .nav__list-item {
+    display: block;
+    margin-top: 30px !important;
+  }
+
+  .nav__list.open {
+    transition: 0.5s ease-in-out all;
+    animation: 0.4s slideDown ease 1 forwards;
+  }
+}
+
 @media all and (max-width: 450px) {
   .insight-image-card .card:first-child {
     margin-right: 0 !important;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+
+  /* 50% {
+    height: 50px;
+  } */
+
+  to {
+    height: 150px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: 150px;
+  }
+
+  to {
+    height: 0;
   }
 }

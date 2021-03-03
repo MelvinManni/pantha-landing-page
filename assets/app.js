@@ -69,3 +69,8 @@ function customAlert(type = "", message) {
     alertHolder.remove();
   }, 3000);
 }
+
+function toggleMenu() {
+  const menu = document.querySelector(".nav__list");
+  menu.classList.toggle("open");
+}
