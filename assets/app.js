@@ -4,6 +4,16 @@ window.onload = (event) => {
   }, 1000);
 };
 
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
+
+  if (pageYOffset > 200) {
+    nav.style.position = "fixed";
+  } else {
+    nav.style.position = "relative";
+  }
+});
+
 function contactForm(e) {
   e.preventDefault();
   const form = e.target.elements;
@@ -26,7 +36,7 @@ async function submitContactForm(data, elem) {
   const loader = document.createElement("img");
   loader.width = 50;
   loader.src = "assets/icon/spinner.svg";
-  elem.innerHTML = "";
+  elem.inerHTML = "";
   elem.append(loader);
   try {
     await fetch("https://formspree.io/f/meqpbnvn", {
