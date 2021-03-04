@@ -873,8 +873,9 @@ label {
   height: 340px;
   position: absolute;
   border-radius: 50%;
-  left: -120px;
-  bottom: -120px;
+  left: -150px;
+  bottom: -150px;
+  z-index: 0;
 }
 
 .white-circle {
