@@ -57,17 +57,26 @@ async function submitContactForm(data, elem) {
 
 function customAlert(type = "", message) {
   const alertHolder = document.createElement("div");
+  alertHolder.id = "alert-modal";
   alertHolder.innerHTML = `
-  <div class="alert ${type.toLowerCase()}">
-  <p class="message white fw-5">
-      ${message}
+  <div class="alert">
+  <div class="alert-card">
+  <img src="assets/icon/${type.toLowerCase()}.svg" alt=""/>
+  <p class="fw-5">
+  ${message}
   </p>
+  <button onclick="removeModal()" class="btn">
+    Okay
+  </button>
+  </div>
 </div>
   `;
+
   document.body.append(alertHolder);
-  setTimeout(() => {
-    alertHolder.remove();
-  }, 3000);
+}
+
+function removeModal() {
+  document.getElementById("alert-modal").remove();
 }
 
 function toggleMenu() {
